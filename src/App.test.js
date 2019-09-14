@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, unmountComponentAtNode } from "react-dom";
 import App from './App';
 
 let container = null;
@@ -10,11 +10,11 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  ReactDOM.unmountComponentAtNode(container);
+  unmountComponentAtNode(container);
   container.remove();
   container = null;
 });
 
 it('renders without crashing', () => {
-  ReactDOM.render(<App />, container);
+  render(<App />, container);
 });
