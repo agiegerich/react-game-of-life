@@ -1,20 +1,11 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from "react-dom";
 import Cell from './Cell.js'
+import TestUtil from './TestUtil';
 
-let container = null;
-
-beforeEach(() => {
-    container = document.createElement('div');
-    document.body.appendChild(container);
-});
-
-afterEach(() => {
-    unmountComponentAtNode(container);
-    container.remove();
-    container = null;
-});
+const test = {container: null};
+TestUtil.setupBeforeEachAndAfterEach(test);
 
 it('renders without crashing', () => {
-    render(<Cell/>, container);
+    render(<Cell/>, test.container);
 });
