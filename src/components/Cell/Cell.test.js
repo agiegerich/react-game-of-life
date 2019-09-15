@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from "react-dom";
-import App from './App';
 import Cell from './Cell.js'
 
 let container = null;
@@ -17,5 +16,5 @@ afterEach(() => {
 });
 
 it('renders without crashing', () => {
-    render(<Cell />, container);
+    render(<Cell/>, container);
 });
